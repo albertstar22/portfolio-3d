@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Update NPM
-          command: "sudo apt-get install npm"
+          command: "sudo apt-get install -y nodejs"
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
