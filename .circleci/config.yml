@@ -3,12 +3,12 @@ jobs:
   build:
     working_directory: ~/project
     docker:
-      - image: cimg/node:18.0.0
+      - image: cimg/node:^18.0.0
     steps:
       - checkout
       - run:
           name: Update NPM
-          command: "sudo apt-get install -y nodejs"
+          command: "sudo npm install"
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
